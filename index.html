@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plasmyrage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="bloodVesselCanvas"></canvas>
+
+  <div id="infoBox">
+    <h3 id="infoBoxTitle"></h3>
+    <ul id="infoBoxList"></ul>
+  </div>
+
+  <div id="simulationUI">
+    <button id="backButton">&larr; Back to Menu</button>
+  </div>
+
+  <div id="introCard">
+    <h1>Plasmyrage</h1>
+    <p>
+      Peripheral blood smear in motion: erythrocytes, platelets, and leukocytes coursing
+      within a vessel lumen, with neutrophils engaging invading bacteria.
+    </p>
+    <div class="button-group">
+      <button id="startButton">Begin Simulation</button>
+      <button id="exitButton">Exit</button>
+      <button id="histologyButton">More histology here..</button>
+    </div>
+  </div>
+
+  <div id="histologyPanel">
+    <div class="panel-content">
+      <h2>Histology Notes</h2>
+      <p><strong>Peripheral Blood Smear – Key Features:</strong></p>
+      <ul>
+        <li><strong>Erythrocytes (RBCs):</strong> Biconcave, anucleate discs; central pallor ~1/3 diameter; transport O₂/CO₂.</li>
+        <li><strong>Platelets (Thrombocytes):</strong> Small, irregular cytoplasmic fragments; essential for clot formation.</li>
+        <li><strong>Neutrophils:</strong> 10–12 μm; multilobed nucleus; first line of defense, phagocytosis of bacteria.</li>
+        <li><strong>Lymphocytes:</strong> 7–10 μm; dark nucleus, thin cytoplasm; central to adaptive immunity.</li>
+        <li><strong>Monocytes:</strong> 12–20 μm; kidney-shaped nucleus; precursors to macrophages.</li>
+      </ul>
+      <p class="credit">
+        Adapted from <em>Ross & Pawlina, Histology: A Text and Atlas</em><br>
+        Built on CodePen · Credits:
+        <a href="https://github.com/gravityeffect1" target="_blank">GitHub #SaraSovix</a>
+      </p>
+      <button id="closeHistology">Close</button>
+    </div>
+  </div>
+
+  <div id="goodbyeScreen">
+    <p>Thank you for exploring. Go study now :]</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
