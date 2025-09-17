@@ -31,7 +31,7 @@ An interactive histology-inspired simulation of red blood cells, platelets, and 
 ## 🛠️ Setup
 1. Clone the repo:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/plasmyrage.git
+   git clone https://github.com/gravityeffect1/plasmyrage.git
 
 Credits
 Built by Sara Sovix
