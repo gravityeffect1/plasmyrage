@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+@keyframes backgroundFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes pulseButton {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(200, 50, 50, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(200, 50, 50, 0.6); }
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: #6d2a33;
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%,
+    transparent 50%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.02) 75%,
+    transparent 75%, transparent),
+    radial-gradient(circle at center, rgba(253,224,224,0.3) 0%, rgba(109,42,51,0.6) 60%);
+  background-size: 60px 60px, 200% 200%;
+  animation: backgroundFlow 25s ease-in-out infinite;
+  position: relative;
+}
+body::after {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  box-shadow: inset 0 0 150px 20px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+canvas { display: block; cursor: pointer; }
+
+
+#introCard {
+  position: absolute; top: 50%; left: 50%;
+  width: 90%; max-width: 450px;
+  padding: 2rem 3rem;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translate(-50%, -50%);
+}
+#introCard.visible { opacity: 1; pointer-events: auto; }
+#introCard.hidden { opacity: 0; transform: translate(-50%, -50%) scale(0.8); pointer-events: none; }
+#introCard h1 { font-weight: 600; font-size: 2.5rem; margin-bottom: .5rem; }
+#introCard p { font-weight: 300; font-size: 1rem; margin-bottom: 2rem; line-height: 1.6; }
+#introCard .button-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+
+#startButton {
+  background: linear-gradient(45deg, #ff4d4d, #c63a3a);
+  border: none; color: white;
+  padding: 1rem 2.5rem; border-radius: 50px;
+  font-size: 1.1rem; font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  animation: pulseButton 2.5s infinite ease-in-out;
+}
+#startButton:hover { transform: scale(1.1); }
+
+#exitButton, #histologyButton {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.8);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem; font-weight: 600;
+  cursor: pointer;
+  transition: background .3s, color .3s, transform .2s;
+}
+#exitButton:hover, #histologyButton:hover {
+  background: rgba(255,255,255,0.9);
+  color: #2c1e1e;
+  transform: translateY(-2px);
+}
+
+
+#simulationUI {
+  position: absolute; top: 20px; left: 20px;
+  z-index: 100;
+  opacity: 0; transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+#simulationUI.visible { opacity: 1; pointer-events: auto; }
+#backButton {
+  background: rgba(28,18,18,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #f0f0f0;
+  padding: 10px 20px; border-radius: 8px;
+  cursor: pointer; font-size: 14px;
+}
+#backButton:hover { background: rgba(40,30,30,0.9); transform: translateY(-2px); }
+
+
+#infoBox {
+  position: absolute; opacity: 0; transform: scale(0.95);
+  background: rgba(28,18,18,0.8);
+  color: #f0f0f0;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px; padding: 10px 20px;
+  max-width: 250px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+#infoBox.visible { opacity: 1; transform: scale(1); }
+
+
+#goodbyeScreen {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; justify-content: center; align-items: center;
+  background-color: #1a1113; color: #f0f0f0;
+  font-size: 2rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity 1s ease;
+  z-index: 200;
+}
+#goodbyeScreen.visible { opacity: 1; }
+
+
+#histologyPanel {
+  position: fixed; top: 0; right: -100%;
+  width: 320px; height: 100%;
+  background: rgba(28,18,18,0.95);
+  backdrop-filter: blur(10px);
+  color: #f0f0f0;
+  box-shadow: -6px 0 20px rgba(0,0,0,0.6);
+  transition: right 0.5s ease;
+  z-index: 300;
+  display: flex; flex-direction: column;
+  padding: 2rem 1.5rem;
+}
+#histologyPanel.visible { right: 0; }
+#histologyPanel h2 { margin: 0 0 1rem; font-size: 1.4rem; }
+#histologyPanel ul { padding-left: 1.2rem; line-height: 1.5; }
+#histologyPanel .credit { margin-top: auto; font-size: 0.85rem; opacity: 0.7; }
+#histologyPanel a { color: #ff4d4d; text-decoration: none; }
+#histologyPanel button {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px; border: none;
+  background: rgba(255,255,255,0.1);
+  color: #f0f0f0; font-size: 0.9rem;
+  cursor: pointer; transition: background .2s, transform .2s;
+}
+#histologyPanel button:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
