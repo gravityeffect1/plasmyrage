@@ -33,14 +33,17 @@ An interactive histology-inspired simulation of red blood cells, platelets, and 
    ```bash
    git clone https://github.com/gravityeffect1/plasmyrage.git
 
-Credits
-Built by Sara Sovix
-Simulation + histology integration inspired by classic atlases( and difficult syllabus contents)
+## Credits
+- Built by Sara Sovix
+- Simulation + histology integration inspired by classic atlases( and difficult syllabus contents)
 
-Future Ideas
-Add eosinophils & basophils for full leukocyte set
-Toggle between healthy vs. pathological smears
-Zoom-in ultrastructure view (electron micrograph style)
+## Future Ideas
+- Add eosinophils & basophils for full leukocyte set
+- Toggle between healthy vs. pathological smears
+- Zoom-in ultrastructure view (electron micrograph style)
 
 <img width="1284" height="739" alt="Screenshot 2025-09-17 at 22 49 48" src="https://github.com/user-attachments/assets/3b8de722-af49-4e4e-b554-30cfb01e9f4b" />
 <img width="1284" height="739" alt="Screenshot 2025-09-17 at 22 49 35" src="https://github.com/user-attachments/assets/944c8631-90a1-4cef-9c93-001e6a35e2c8" />
+<img width="373" height="759" alt="Screenshot 2025-09-17 at 22 53 40" src="https://github.com/user-attachments/assets/15d60c28-a2a4-481f-b2db-258207648234" />
+<img width="1306" height="759" alt="Screenshot 2025-09-17 at 22 53 51" src="https://github.com/user-attachments/assets/8444e665-f0a6-4706-bba6-ce9c5bf1b1d4" />
+
