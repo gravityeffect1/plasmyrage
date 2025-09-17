@@ -16,9 +16,6 @@ An interactive histology-inspired simulation of red blood cells, platelets, and 
 - Animated vessel background for immersion  
 - Smooth transitions between menu, simulation, and goodbye screen  
 
----
-
-
 
 ---
 
